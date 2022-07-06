@@ -2,6 +2,7 @@ const router = require("express").Router();
 const WifiElement = require("../model/WifiElement");
 
 router.post("/", async (req, res) => {
+    console.log("post wifi element");
     const wifiElement = new WifiElement({
         linkSpeed: req.body.linkSpeed,
         frequency: req.body.frequency,
@@ -10,6 +11,7 @@ router.post("/", async (req, res) => {
         BSSID: req.body.BSSID,
         latitude: req.body.latitude,
         longitude: req.body.longitude,
+        time: new Date()
     });
     var wifiElementResponse = {
         linkSpeed: req.body.linkSpeed,

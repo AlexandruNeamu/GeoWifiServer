@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 
 const homeRoute = require("./routes/home");
 const wifiDataRoute = require("./routes/wifiData");
+const userRoute = require("./routes/auth");
+const statusRoute = require("./routes/status");
 // const authRoute = require('./routes/auth');
 // const forgotPasswd = require('./routes/forgotPassword');
 // const dashboardRoute = require('./routes/dashboard');
@@ -25,6 +27,8 @@ app.use(cors());
 // Route Middlewares
 app.use("/", homeRoute);
 app.use("/wifiData", wifiDataRoute);
+app.use("/auth", userRoute);
+app.use("/status", statusRoute);
 // app.use('/auth', authRoute);
 // app.use('/forgotPassword', forgotPasswd);
 // app.use('/dashboard', dashboardRoute);

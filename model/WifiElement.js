@@ -5,6 +5,7 @@ const BSON = require("bson");
 const WifiElementSchema = new mongoose.Schema({
     linkSpeed: {
         type: Number,
+        
     },
 
     frequency: {
@@ -21,10 +22,16 @@ const WifiElementSchema = new mongoose.Schema({
     },
     latitude: {
         type: Number,
+        required: true
     },
     longitude: {
         type: Number,
+        required: true
     },
+    time: {
+        type: Number,
+        required: true
+    }
 });
 
 module.exports = mongoose.model("WifiElement", WifiElementSchema);
